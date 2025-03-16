@@ -1,0 +1,328 @@
+# This program is a short epistolary narrative, where Byron attempts to invite
+# several people to dinner. It utilizes lists to hold the names of the 
+# characters, then insert(), append(), and pop() to add and remove those
+# characters from the list. It was created as a learning exercise for Python,
+# following exercise 3-4 in 'Python Crash Course' by Eric Matthes. It was 
+# written and tested using Python 3.13.2, and finished on 03-15-2025.
+
+guest_first = ['edgar', 'mary', 'percy']
+guest_middle = ['allen']
+guest_last = ['poe', 'shelley']
+prefixes = ['mr.', 'ms.', 'mrs.']
+
+# This section holds a divider for text under "message_0".
+
+message_0 = "\n\t-----------------------------------------------------------------------\n\n"
+
+# This section holds an invitation for Edgar Allen Poe under "message_1".
+
+message_1 = f"\n\t\t{prefixes[0].title()} {guest_last[0].title()},\n\n\t" \
+f"I hope this letter finds you well. I'd like to extend a cordial\n\t" \
+f"invitation to dinner this coming Friday, the 13th. It is my utmost \n\t" \
+f"hope that we pass a pleasant evening under the starlight, and find \n\t" \
+f"inspiration. I have also invited {guest_first[1].title()} and " \
+f"{guest_first[2].title()}. Please let me know\n\t" \
+f"of your attendance at your earliest convenience.\n\n\t\t" \
+f"Yours faithfully,\n\t\t" \
+f"Byron\n" \
+
+# This section holds an invitation for Mary Shelley under "message_2".
+
+message_2 = f"\n\t\tMy dear {prefixes[1].title()} " \
+f"{guest_first[1].title()} {guest_last[1].title()},\n\n\t" \
+f"I hope you're doing well, my dear. I am hosting a dinner this coming\n\t" \
+f"Friday, the 13th, and it is my dearest hope that you'll attend.\n\t" \
+f"Of course, I've also invited our friend {prefixes[0].title()} " \
+f"{guest_last[0].title()}. And although my\n\t" \
+f"letter to him has likely arrived at the same time, please convey my\n\t" \
+f"wishes to our dearest {guest_first[2].title()} that he also contrive " \
+f"to make the time\n\tto attend upon your arm.\n\n\t\t" \
+f"Yours ever faithfully,\n\t\t" \
+f"Byron\n" \
+
+# This section holds an invitation for Percy Shelley under "message_3".
+
+message_3 = f"\n\t\tHello again {guest_first[2].title()},\n\n\t" \
+f"Doubtless you've left this letter unopened, and our dearest " \
+f"{guest_first[1].title()} has\n\t" \
+f"come in to tell you. I'm inviting both of you, and good old " \
+f"{guest_first[0].title()}, to\n\t" \
+f"dinner this Friday, the 13th. Maybe we'll find some real inspiration, eh? \n\n\t\t" \
+f"Yours ever faithfully,\n\t\t" \
+f"Byron\n" \
+
+# This section prints messages 1 - 3.
+
+print(message_1)
+print(message_0)
+print(message_2)
+print(message_0)
+print(message_3)
+
+# This section holds the message that Edgar Allen Poe can't make it under
+# "message_4", and prints it.
+
+message_4 = f"\n\t\t\t{guest_first[0].title()} {guest_middle[0].title()} " \
+f"{guest_last[0].title()} cannot make it to dinner.\n" \
+
+print(message_0)
+print(message_4)
+print(message_0)
+
+# This section modifies the original list to replace Edgar Allen Poe with 
+# Oscar Wilde, using pop() and append() to move Edgar to a new list.
+
+nonguest_first = []
+nonguest_middle = []
+nonguest_last = []
+
+nonguest_first.append(f"{guest_first.pop(0)}")
+nonguest_middle.append(f"{guest_middle.pop(0)}")
+nonguest_last.append(f"{guest_last.pop(0)}")
+
+guest_first.append('oscar')
+guest_last.append('wilde')
+
+# This section holds a letter to Mary Shelley stating that Edgar Allen Poe
+# cannot make it to dinner under "message_5".
+
+message_5 = f"\n\t\tDearest {guest_first[0].title()},\n\n\t" \
+f"Regretfully, it seems {prefixes[0].title()} {nonguest_last[0].title()} " \
+f"has come down with some new form of the\n\t" \
+f"consumption which renders him unable to fully enjoy the pleasures\n\t" \
+f"of polite company, and so he sends his regrets that he cannot attend \n\t" \
+f"my poor dinner. Do not fret that we shall be without lively company,\n\t" \
+f"however, as I have heard that {prefixes[0].title()} {guest_last[1].title()} " \
+f"is taking the air here, and so\n\t" \
+f"I shall be sending him an invitation with all haste. I cannot wait to see\n\t" \
+f"you and {guest_first[1].title()}, dear {guest_first[0].title()}. I am " \
+f"counting down the days.\n\n\t\t" \
+f"Yours ever faithfully,\n\t\t" \
+f"Byron\n" \
+
+# This section holds a letter to Oscar Wilde, inviting him to dinner, under
+# "message_6".
+
+message_6 = f"\n\t\tTo the enigmatic {prefixes[0].title()} " \
+f"{guest_last[1].title()}, \n\n\t" \
+f"I have heard a great many things about you recently, chiefly that you\n\t" \
+f"are a scandalous figure, and a Romantic of some reknown. To that end, I\n\t" \
+f"should greatly desire to invite you to an upcoming dinner of mine, this\n\t" \
+f"Friday, the 13th. I should count myself the luckiest man alive to get to\n\t" \
+f"know you better, and the illustrious {prefixes[0].title()} and " \
+f"{prefixes[2].title()} {guest_last[0].title()} shall also be\n\t" \
+f"in attendance.\n\n\t\t" \
+f"Your newest admirer,\n\t\t" \
+f"Byron\n" \
+
+# This section holds a letter to Percy Shelley, informing him of the changes,
+# under "message_7".
+
+message_7 = f"\n\t\tHullo {guest_first[1].title()}, \n\n\t" \
+f"So {nonguest_first[0].title()} bowed out. Maybe I should have expected it! " \
+f"Well, {guest_first[0].title()}'s already\n\t" \
+f"told you about {guest_first[2].title()}, I expect. We're going to have " \
+f"such a grand time!\n\n\t\t" \
+f"Yours ever faithfully,\n\t\t" \
+f"Byron\n" \
+
+# This section prints messages 5 - 7.
+
+print(message_5)
+print(message_0)
+print(message_6)
+print(message_0)
+print(message_7)
+
+# This section holds the message that Byron has a bigger table and is inviting
+# three new guests under "message_8" and prints it.
+
+message_8 = f"\n\tByron procured a bigger table, and is now inviting " \
+f"even more guests.\n" \
+
+print(message_0)
+print(message_8)
+print(message_0)
+
+# This section adds three more guests, using "insert()" and "append()".
+
+guest_first.insert(0, 'emily')
+guest_last.insert(0, 'bronte')
+guest_first.insert(2, 'tybalt')
+guest_last.insert(2, 'unterhal')
+guest_first.append('virginia')
+guest_last.append('woolf')
+
+# This section holds a letter to Emily Bronte, inviting her to dinner,
+# under "message_9".
+
+message_9 = f"\n\t\tDear {prefixes[1].title()} {guest_last[0].title()},\n\n\t" \
+f"You may have heard that I am holding an intimate gathering this coming\n\t" \
+f"Friday, the 13th. You may have wondered where your invitation for the\n\t" \
+f"night was, and why it had not arrived, as is surely your right. I am so\n\t" \
+f"delighted to let you know I was merely waiting for the arrival of my\n\t" \
+f"new dinner table, so that we could enjoy our gathering in all comfort.\n\t" \
+f"Please do attend, as I know {guest_first[1].title()} " \
+f"will simply be delighted to see you.\n\n\t\t" \
+f"Yours faithfully,\n\t\t" \
+f"Byron\n" \
+
+# This section holds a letter to Virginia Woolf, inviting her to dinner,
+# under "message_10".
+
+message_10 = f"\n\t\tDearest {guest_first[5].title()},\n\n\t" \
+f"Yes, I know you're wise to all my tricks, and that if anyone's the " \
+f"{guest_last[4].title()}\n\tamongst our company, it surely must be me. " \
+f"But after {nonguest_first[0].title()} so rudely\n\t" \
+f"snubbed me, I am beside myself, and the only solace I find is in my\n\t" \
+f"new dinner table. It would mean the world to me if you would come and\n\t" \
+f"keep {prefixes[1].title()} {guest_last[0].title()} company.\n\n\t\t" \
+f"Yours faithfully,\n\t\t" \
+f"Byron\n" \
+
+# This section holds a letter to Tybalt Unterhal, inviting him to dinner,
+# under "message_11".
+
+message_11 = f"\n\t\tJolly old {guest_first[2].title()},\n\n\t" \
+f"Things are looking up with this little gathering you suggested to me. I\n\t" \
+f"cannot thank you enough, for it's the most fun I've had in quite some\n\t" \
+f"time. Now that things seem to be coming together, and with the incipient\n\t" \
+f"arrival of my new table any moment now, would you like to swing around\n\t" \
+f"if you get a chance, old boy? {guest_first[5].title()} " \
+f"{guest_last[4].title()} should be there, and of course\n\t" \
+f"my dearest {guest_first[1].title()} and {guest_first[3].title()}. The " \
+f"{guest_last[1].title()}s are the life of every gathering.\n\t" \
+f"Find some time to come and see us!\n\n\t\t" \
+f"Yours faithfully,\n\t\t" \
+f"Byron\n" \
+
+# This section prints messages 9 - 11.
+
+print(message_9)
+print(message_0)
+print(message_10)
+print(message_0)
+print(message_11)
+
+# This section holds the message that Byron's table won't be arriving in
+# time and he can only invite two people under "message_12" and prints it.
+
+message_12 = f"\n\t\t\tByron's table won't arrive in time!" \
+f"\n\t\t\tHe can only invite two guests.\n" \
+
+print(message_0)
+print(message_12)
+print(message_0)
+
+# This section removes Oscar Wilde from the list using pop(), then creates
+# and prints "message_13", sending a letter to uninvite him from dinner.
+
+nonguest_first.append(f"{guest_first.pop(4)}")
+nonguest_last.append(f"{guest_last.pop(3)}")
+
+message_13 = f"\n\t\t{prefixes[0].title()} {nonguest_last[1].title()}, \n\n\t" \
+f"I'm so sorry to have got your hopes up for a grand romantic evening.\n\t" \
+f"The blasted table refuses to arrive, and you understand that I can't\n\t" \
+f"host a proper gathering if we're all crammed around the poor excuse for\n\t" \
+f"a dinner table I am trying to replace! I hope you aren't too put out.\n\t" \
+f"Be on the lookout, for I shall extend another invitation as soon as\n\t" \
+f"the new table arrives to be installed in the dining room.\n\n\t\t" \
+f"Regretfully,\n\t\t" \
+f"Byron\n" \
+
+print(message_13)
+print(message_0)
+
+# This section removes Emily Bronte from the list using pop(), then creates
+# and prints "message_14", sending a letter to uninvite her from dinner.
+
+nonguest_first.append(f"{guest_first.pop(0)}")
+nonguest_last.append(f"{guest_last.pop(0)}")
+
+message_14 = f"\n\t\t{prefixes[1].title()} {nonguest_first[2].title()} " \
+f"{nonguest_last[2].title()}, \n\n\t" \
+f"Truly this letter is only a formality, for I do not suspect you ever\n\t" \
+f"intended to grace my dinner party with your wit, despite my best\n\t" \
+f"efforts. Still, I rage against the forces which keep this table from me,\n\t" \
+f"for they steal even the faintest breath of hope that I might see you.\n\t" \
+f"I shall write again, when I have mustered my forces and my will.\n\n\t\t" \
+f"All my grief,\n\t\t" \
+f"Byron\n" \
+
+print(message_14)
+print(message_0)
+
+# This section removes Virginia Woolf from the list using pop(), then creates
+# and prints "message_15", sending a letter to uninvite her from dinner.
+
+nonguest_first.append(f"{guest_first.pop(3)}")
+nonguest_last.append(f"{guest_last.pop(2)}")
+
+message_15 = f"\n\t\tOh {nonguest_first[3].title()}, \n\n\t" \
+f"And how the plans of wolves fall in front of the grace of lambs.\n\t" \
+f"I shall not see {prefixes[1].title()} {nonguest_last[2].title()} " \
+f"this coming Friday, and must gird myself\n\t" \
+f"in the meanwhile. I shall write to you again soon, {nonguest_last[3].title()}.\n\n\t\t" \
+f"Yours,\n\t\t" \
+f"Byron\n" \
+
+print(message_15)
+print(message_0)
+
+# This section removes Tybalt Unterhal from the list using pop(), then creates
+# and prints "message_16", sending a letter to uninvite him from dinner.
+
+nonguest_first.append(f"{guest_first.pop(1)}")
+nonguest_last.append(f"{guest_last.pop(1)}")
+
+message_16 = f"\n\t\t{nonguest_first[4].title()} my lad, \n\n\t" \
+f"You were right to say you couldn't leave Paris yet! You'd have nothing\n\t" \
+f"of interest to see if you came out now. Hold fast, and as the season\n\t" \
+f"turns, I shall write again. I'll have my {guest_last[0].title()}s to keep " \
+f"me warm in\n\tthe meanwhile, and {nonguest_first[3].title()} to keep me honest.\n\n\t\t" \
+f"Yours,\n\t\t" \
+f"Byron\n" \
+
+print(message_16)
+print(message_0)
+
+# This section holds a letter to Mary Shelley letting her know she's still
+# invited to dinner under "message_17" and prints it.
+
+message_17 = f"\n\t\tOh my dearest {guest_first[0].title()}, \n\n\t" \
+f"Of course by now you have heard all about the great battle I have waged\n\t" \
+f"with this table in the interest of providing you and " \
+f"{guest_first[1].title()} with a time\n\t" \
+f"as awe-inspiring as I can make it. But it's alright, my dear. With just\n\t" \
+f"yourself and {guest_first[1].title()}, I know we shall still enjoy ourselves " \
+f"mightily, and\n\thopefully long into the night. I shall see you soon, my dear.\n\n\t\t" \
+f"Yours ever faithfully,\n\t\t" \
+f"Byron\n" \
+
+print(message_17)
+print(message_0)
+
+# This section holds a letter to Percy Shelley letting him know he's still
+# invited to dinner under "message_18" and prints it.
+
+message_18 = f"\n\t\tDear {guest_first[1].title()}, \n\n\t" \
+f"Of course {guest_first[0].title()} has already told you, but it's just " \
+f"going to be us\n\tthis time, my dear. Still though, I think we shall " \
+f"still manage to\n\tmake it a grand old time.\n\n\t\t" \
+f"Yours ever faithfully,\n\t\t" \
+f"Byron\n" \
+
+print(message_18)
+print(message_0)
+
+# This section deletes Mary and Percy Shelley from the guest list, then prints
+#the empty list to make sure all guests are accounted for. This section can be safely
+deleted, and was only included for the purposes of the learning exercise.
+
+del guest_first[0]
+del guest_first[0]
+del guest_last[0]
+
+print(guest_first)
+print(guest_last)
+print(message_0)
